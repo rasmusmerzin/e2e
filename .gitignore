@@ -1,6 +1,8 @@
 node_modules
 coverage
 build
+cypress/videos
+cypress/screenshots
 
 npm-debug.log
 yarn-debug.log
