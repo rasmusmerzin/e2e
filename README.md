@@ -1,6 +1,6 @@
 # e2e
 
-[Random school project](https://outsidein.dev/react) to practice test-driven
+[School project](https://outsidein.dev/react) to practice test-driven
 development.
 
 Site's available at
