@@ -1,10 +1,34 @@
 import { Provider } from "react-redux";
+import { createMuiTheme } from "@material-ui/core/styles";
+import pink from "@material-ui/core/colors/pink";
+import { ThemeProvider } from "@material-ui/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 import store from "./store";
 import RestaurantScreen from "./components/RestaurantScreen";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+  },
+});
+
 const App = () => (
   <Provider store={store}>
-    <RestaurantScreen />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Explain2Establish</Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <RestaurantScreen />
+      </Container>
+    </ThemeProvider>
   </Provider>
 );
 
