@@ -1,4 +1,8 @@
 describe("Listing Restaurants", () => {
+  let config;
+
+  beforeEach(async () => (config = await cy.fixture("config")));
+
   it("shows restaurants from the server", () => {
     const sushiPlace = "Sushi Place";
     const pizzaPlace = "Pizza Place";
@@ -7,8 +11,7 @@ describe("Listing Restaurants", () => {
 
     cy.route({
       method: "GET",
-      url:
-        "https://outside-in-dev-api.herokuapp.com/1cS9nLecm2I4gaB5engW6KSG2qjbmn4g/restaurants",
+      url: `https://outside-in-dev-api.herokuapp.com/${config.apiKey}/restaurants`,
       response: [
         { id: 1, name: sushiPlace },
         { id: 2, name: pizzaPlace },
