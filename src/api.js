@@ -1,14 +1,15 @@
 import axios from "axios";
 
-const client = axios.create({
-  baseURL:
-    "https://outside-in-dev-api.herokuapp.com/1cS9nLecm2I4gaB5engW6KSG2qjbmn4g",
-});
+const baseURL =
+  "https://outside-in-dev-api.herokuapp.com/1cS9nLecm2I4gaB5engW6KSG2qjbmn4g";
+
+const client = axios.create({ baseURL });
 
 const api = {
-  loadRestaurants() {
-    return client.get("/restaurants").then((response) => response.data);
-  },
+  loadRestaurants: () =>
+    client.get("/restaurants").then((response) => response.data),
+  createRestaurant: (name) =>
+    client.post("/restaurants", { name }).then((response) => response.data),
 };
 
 export default api;

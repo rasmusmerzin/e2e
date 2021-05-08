@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:e2e": "cypress run",
+    "test:integration": "cypress run",
     "eject": "react-scripts eject",
     "lint": "eslint src"
   },
@@ -50,6 +50,7 @@
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.4.0",
+    "flush-promises": "^1.0.2",
     "prettier": "^2.2.1"
   }
 }
